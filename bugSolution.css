@@ -1,0 +1,17 @@
+The following revised CSS avoids the `!important` declaration, improving maintainability and readability:
+
+```css
+.container {
+  width: 500px;
+}
+
+.container .item {
+  width: 100px;
+}
+
+.item {
+  width: 200px; /* No !important */
+}
+```
+
+In this solution, the more specific selector `.container .item` takes precedence, resulting in the expected width of 100px for items inside the container.  The `.item` rule is still applied to items not within a `.container`, allowing for more flexible styling.
