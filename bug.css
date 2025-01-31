@@ -1,0 +1,17 @@
+The following CSS code snippet might cause unexpected behavior in some browsers due to a specific order of selectors and the use of the `!important` flag:
+
+```css
+.container {
+  width: 500px;
+}
+
+.item {
+  width: 200px !important;
+}
+
+.container .item {
+  width: 100px;
+}
+```
+
+The `!important` flag on `.item` overrides the `width: 100px` in `.container .item`. However, the order of selectors can influence how this override works in specific situations.  In some cases, the browser might process the styles from more specific selectors first and then apply `!important` causing unpredictable results.
